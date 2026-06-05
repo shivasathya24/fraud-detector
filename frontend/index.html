@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squads | Fraud & Scam Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-grid"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>SQUADS</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">API</a>
+            <a href="#">About</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Threat Intelligence Engine</h1>
+            <p>Real-time AI analysis for fraudulent trading platforms and scam messages.</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Input Section -->
+            <section class="input-panel glass-panel">
+                <div class="tabs">
+                    <button class="tab-btn active" data-target="url-analyzer"><i class="fa-solid fa-link"></i> Platform URL</button>
+                    <button class="tab-btn" data-target="message-analyzer"><i class="fa-solid fa-comment-sms"></i> Scam Message</button>
+                    <button class="tab-btn" data-target="kyc-analyzer"><i class="fa-solid fa-id-card"></i> KYC Scanner</button>
+                    <button class="tab-btn" data-target="education-panel"><i class="fa-solid fa-graduation-cap"></i> Education</button>
+                </div>
+
+                <div class="tab-content active" id="url-analyzer">
+                    <h3>Analyze Trading Platform</h3>
+                    <p class="subtitle">Enter the website URL or App Store link to check for fraud indicators.</p>
+                    <form id="url-form">
+                        <div class="input-group">
+                            <i class="fa-solid fa-globe input-icon"></i>
+                            <input type="text" id="url-input" placeholder="https://example-crypto-trade.com" required autocomplete="off">
+                            <div class="scan-line"></div>
+                        </div>
+                        <button type="submit" class="analyze-btn">
+                            <span class="btn-text">Initiate Scan</span>
+                            <i class="fa-solid fa-radar"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="message-analyzer">
+                    <h3>Analyze Message</h3>
+                    <p class="subtitle">Paste text or upload a screenshot of the message (WhatsApp, Telegram, SMS).</p>
+                    <form id="message-form">
+                        <div class="input-group textarea-group">
+                            <i class="fa-solid fa-quote-left input-icon"></i>
+                            <textarea id="message-input" placeholder="e.g. 'Guaranteed 500% returns in 24 hours! Join my VIP signal group now...'"></textarea>
+                            <div class="scan-line"></div>
+                        </div>
+                        
+                        <div class="file-upload-group">
+                            <input type="file" id="image-upload" accept="image/*" class="hidden-input">
+                            <label for="image-upload" class="upload-btn">
+                                <i class="fa-solid fa-image"></i> Upload Screenshot
+                            </label>
+                            <div id="image-preview-container" class="hidden">
+                                <img id="image-preview" src="" alt="Screenshot Preview">
+                                <button type="button" id="remove-image"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="analyze-btn">
+                            <span class="btn-text">Analyze Evidence</span>
+                            <i class="fa-solid fa-brain"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="kyc-analyzer">
+                    <h3>KYC Fraud Scanner</h3>
+                    <p class="subtitle">Paste the email or message asking for your Aadhaar, PAN, or OTP.</p>
+                    <form id="kyc-form">
+                        <div class="input-group textarea-group">
+                            <i class="fa-solid fa-user-shield input-icon"></i>
+                            <textarea id="kyc-input" placeholder="e.g. 'Your account is blocked. Please upload your PAN card and Aadhaar immediately to unlock your funds.'"></textarea>
+                            <div class="scan-line"></div>
+                        </div>
+
+                        <div class="file-upload-group">
+                            <input type="file" id="kyc-image-upload" accept="image/*" class="hidden-input">
+                            <label for="kyc-image-upload" class="upload-btn">
+                                <i class="fa-solid fa-image"></i> Upload KYC Screenshot
+                            </label>
+                            <div id="kyc-image-preview-container" class="hidden">
+                                <img id="kyc-image-preview" src="" alt="Screenshot Preview">
+                                <button type="button" id="kyc-remove-image"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="analyze-btn">
+                            <span class="btn-text">Verify KYC Request</span>
+                            <i class="fa-solid fa-fingerprint"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="tab-content" id="education-panel">
+                    <h3>Investing vs Trading</h3>
+                    <p class="subtitle">Protect your wealth by understanding the difference.</p>
+                    <div class="education-content" style="margin-top: 20px; text-align: left; line-height: 1.6; color: var(--text-secondary);">
+                        <h4 style="color: var(--neon-green); margin-bottom: 10px;"><i class="fa-solid fa-seedling"></i> Investing (Safe, Long-Term)</h4>
+                        <ul style="margin-bottom: 20px; padding-left: 20px;">
+                            <li>Focuses on building wealth gradually over years or decades.</li>
+                            <li>Relies on fundamental analysis of a company's true value.</li>
+                            <li>Lower risk, requires patience, and ignores short-term market noise.</li>
+                        </ul>
+                        
+                        <h4 style="color: var(--neon-yellow); margin-bottom: 10px;"><i class="fa-solid fa-chart-line"></i> Trading (High Risk, Short-Term)</h4>
+                        <ul style="margin-bottom: 20px; padding-left: 20px;">
+                            <li>Focuses on making quick profits from short-term price fluctuations.</li>
+                            <li>Highly stressful, requires constant monitoring of technical charts.</li>
+                            <li>Most retail traders lose money. Scammers target people looking for "quick trading profits".</li>
+                        </ul>
+
+                        <div class="action-recommendation" style="border-color: var(--neon-green); color: var(--neon-green);">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <span><b>Golden Rule:</b> If someone guarantees you quick profits through trading, it is almost certainly a scam. True wealth is built through patient investing.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="risk-legend-box" style="margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.4); border: 1px solid var(--glass-border); border-radius: 10px;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;"><i class="fa-solid fa-scale-balanced"></i> Risk Score Scale</h4>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600;">
+                        <span style="color: var(--neon-green)"><i class="fa-solid fa-shield"></i> 0-30: Safe</span>
+                        <span style="color: var(--neon-yellow)"><i class="fa-solid fa-triangle-exclamation"></i> 31-70: Suspicious</span>
+                        <span style="color: var(--neon-red)"><i class="fa-solid fa-skull"></i> 71-100: Harmful</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-panel glass-panel" id="results-panel">
+                <div class="results-placeholder" id="results-placeholder">
+                    <div class="radar-animation">
+                        <div class="radar-circle"></div>
+                        <div class="radar-beam"></div>
+                    </div>
+                    <p>Awaiting Input...</p>
+                </div>
+
+                <div class="results-content hidden" id="results-content">
+                    <div class="score-header">
+                        <div class="gauge-container">
+                            <svg class="circular-chart" viewBox="0 0 36 36">
+                                <path class="circle-bg"
+                                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                                <path class="circle" id="score-circle"
+                                  stroke-dasharray="0, 100"
+                                  d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                />
+                            </svg>
+                            <div class="gauge-text">
+                                <span id="score-value">0</span>
+                                <span class="gauge-label">Risk Score</span>
+                            </div>
+                        </div>
+                        <div class="classification">
+                            <h2 id="classification-title">Status</h2>
+                            <div class="status-badge" id="status-badge">Unknown</div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-details">
+                        <h3>Detailed Analysis</h3>
+                        <ul id="analysis-list" class="findings-list">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+                    
+                    <div class="action-recommendation" id="recommendation-box">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span id="recommendation-text">Waiting for analysis...</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
