@@ -245,11 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
         url = url.trim();
         
         try {
-            const response = await fetch('http://localhost:5000/api/analyze-url', {
+            const response = await fetch('https://fraud-detector-o8xj.onrender.com/api/analyze-url', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ url: url })
             });
+
             
             if (!response.ok) throw new Error('API Error');
             const data = await response.json();
@@ -297,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function analyzeMessage(text, imageBase64, imageType) {
         try {
-            const response = await fetch('http://localhost:5000/api/analyze-message', {
+            const response = await fetch('https://fraud-detector-o8xj.onrender.com/api/analyze-message', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -306,6 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     imageType: imageType 
                 })
             });
+
             
             if (!response.ok) throw new Error('API Error');
             const data = await response.json();
